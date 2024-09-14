@@ -6,7 +6,8 @@ import React, { useEffect } from "react";
 
 const CartIcon = () => {
   const { totalItems } = useCartStore();
-
+  const i = totalItems;
+  console.log(useCartStore());
   useEffect(() => {
     useCartStore.persist.rehydrate();
   }, []);
@@ -16,7 +17,7 @@ const CartIcon = () => {
       <div className=" relative w-8 h-8 md:w-5 md:h-5">
         <Image src={"/cart.png"} alt="" fill />
       </div>
-      <span>Cart ({totalItems})</span>
+      <span>Cart ({i})</span>
     </Link>
   );
 };
